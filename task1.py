@@ -4,7 +4,7 @@
 # нацело только на единицу и на себя».
 
 def generator_prime_numbers(n: int) -> list[int]:
-    my_list = []
+    #my_list = []
     count = 0
     number = 2
     while count < n:
@@ -13,11 +13,14 @@ def generator_prime_numbers(n: int) -> list[int]:
                 number += 1
                 break
             elif i == number:
-                my_list.append(number)
+                #my_list.append(number)
+                yield number
                 number += 1
                 count += 1
-    return my_list
+    #return my_list
 
-print(*generator_prime_numbers(25))            
+#print(*generator_prime_numbers(25)) 
+for i in generator_prime_numbers(25):
+    print(i, end=' ')           
 
      
